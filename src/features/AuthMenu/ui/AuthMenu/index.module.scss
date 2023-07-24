@@ -1,0 +1,20 @@
+@import '../../../../app/styles/constants.scss';
+
+
+.root {
+    a {
+        text-transform: uppercase;
+    }
+}
+
+.menuLink {
+    margin-right: 16px;
+}
+
+.link {
+    color: $white;
+}
+
+.active {
+    color: $blue;
+}
