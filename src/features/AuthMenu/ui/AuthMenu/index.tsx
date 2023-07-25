@@ -11,14 +11,14 @@ import style from './index.module.scss'
 export const AuthMenu: FC = () => {
 
     return (
-        <Space className = {style.root}>
+        <Space className = {style.root} size={32}>
             <NavLink 
                 className = {
                     ({ isActive }) => isActive ? style.active : style.link
                 } 
                 to = {config.login}
                 >
-                    Sign In
+                    Вход
             </NavLink >
             <NavLink
                 className = {
@@ -26,7 +26,7 @@ export const AuthMenu: FC = () => {
                 } 
                 to = {config.registration}
                 >
-                    Sign Up
+                    Регистрация
             </NavLink >
         </Space>
     )

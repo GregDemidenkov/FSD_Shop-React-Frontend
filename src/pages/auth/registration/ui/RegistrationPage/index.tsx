@@ -18,7 +18,7 @@ export const RegistrationPage: FC = () => {
                 style={{ display: 'flex', justifyContent: 'center'}}
             >
                 <AuthCard
-                    title = {"Sign Up"}
+                    title = {"Регистрация"}
                 >
                     <RegistrationForm />
                 </AuthCard>

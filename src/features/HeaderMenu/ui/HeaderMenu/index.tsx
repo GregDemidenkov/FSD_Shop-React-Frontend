@@ -10,7 +10,7 @@ const items: MenuProps['items'] = [
     {
         label: (
             <Link to = {config.catalog}>
-                Catalog
+                Каталог
             </Link>
         ),
         key: 'catalog',
@@ -19,7 +19,7 @@ const items: MenuProps['items'] = [
     {
         label: (
             <Link to = {config.cart}>
-                Cart
+                Корзина
             </Link>
         ),
         key: 'cart',

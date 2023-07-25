@@ -33,7 +33,7 @@ export const RegistrationForm: FC = () => {
                 <Input 
                     prefix={<UserOutlined className="site-form-item-icon" />} 
                     type='text'
-                    placeholder="Name" 
+                    placeholder="Имя" 
                 />
             </Form.Item>
             <Form.Item
@@ -44,7 +44,7 @@ export const RegistrationForm: FC = () => {
                 <Input 
                     prefix={<MailOutlined className="site-form-item-icon" />} 
                     type='email'
-                    placeholder="Email" 
+                    placeholder="Почта" 
                 />
             </Form.Item>
             <Form.Item
@@ -55,7 +55,7 @@ export const RegistrationForm: FC = () => {
                 <Input
                     prefix={<LockOutlined className="site-form-item-icon" />}
                     type="password"
-                    placeholder="Password"
+                    placeholder="Пароль"
                 />
             </Form.Item>
             <Form.Item style = {{display: 'flex', justifyContent: 'center'}}>
@@ -66,9 +66,9 @@ export const RegistrationForm: FC = () => {
                     size='middle'
                     style = {{display: 'block', margin: '0 auto 20px', textTransform: 'uppercase'}}
                 >
-                    Sign Up
+                    Регистрация
                 </Button>
-                Do you have an account? <Link to = {config.login}>Sign In</Link>
+                Есть аккаунт? <Link to = {config.login}>Войти</Link>
             </Form.Item>
         </Form>
     )

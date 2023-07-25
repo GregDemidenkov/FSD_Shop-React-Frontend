@@ -18,7 +18,7 @@ export const LoginPage: FC = () => {
                 style={{ display: 'flex', justifyContent: 'center'}}
             >
                 <AuthCard
-                    title = {"Sign In"}
+                    title = {"Вход"}
                 >
                     <LoginForm />
                 </AuthCard>

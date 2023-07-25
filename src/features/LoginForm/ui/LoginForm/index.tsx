@@ -33,7 +33,7 @@ export const LoginForm: FC = () => {
                 <Input 
                     prefix={<MailOutlined className="site-form-item-icon" />} 
                     type='email'
-                    placeholder="Email" 
+                    placeholder="Почта" 
                 />
             </Form.Item>
             <Form.Item
@@ -44,7 +44,7 @@ export const LoginForm: FC = () => {
                 <Input
                     prefix={<LockOutlined className="site-form-item-icon" />}
                     type="password"
-                    placeholder="Password"
+                    placeholder="Пароль"
                 />
             </Form.Item>
             <Form.Item style = {{display: 'flex', justifyContent: 'center'}}>
@@ -55,9 +55,9 @@ export const LoginForm: FC = () => {
                     size='middle'
                     style = {{display: 'block', margin: '0 auto 20px', textTransform: 'uppercase'}}
                 >
-                    Sign In
+                    Войти
                 </Button>
-                Don't have an account? <Link to = {config.registration}>Sign Up</Link>
+                Нет аккаунта? <Link to = {config.registration}>Зарегистрируйтесь</Link>
             </Form.Item>
         </Form>
     )
