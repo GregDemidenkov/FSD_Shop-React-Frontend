@@ -19,7 +19,7 @@ export const LayoutHeader: FC = () => {
         <Header className = {styles.header} >
             <Container>
                 <div className = {styles.content}>
-                    <Logo styleList = {{marginRight: '40px'}}/>
+                    <Logo styleList = {{marginRight: '10px'}}/>
                     <div className = {styles.menu}>
                         <HeaderMenu />
                         <AuthMenu />
