@@ -1,8 +1,10 @@
 import { FC } from 'react'
 
 import { LayoutHeader } from '@widgets/LayoutHeader'
+import { LoginForm } from '@features/LoginForm/ui/LoginForm'
 import { LayoutFooter } from '@shared/ui/LayoutFooter'
 import { BaseLayout } from '@shared/ui/BaseLayout'
+import { AuthCard } from '@shared/ui/AuthCard'
 
 
 export const LoginPage: FC = () => {
@@ -12,7 +14,15 @@ export const LoginPage: FC = () => {
             header = {<LayoutHeader />}
             footer = {<LayoutFooter />}
         >
-            <div>LoginPage</div>
+            <div
+                style={{ display: 'flex', justifyContent: 'center'}}
+            >
+                <AuthCard
+                    title = {"Sign In"}
+                >
+                    <LoginForm />
+                </AuthCard>
+            </div>
         </BaseLayout>
     )
 }

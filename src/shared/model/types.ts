@@ -5,3 +5,8 @@ export type BaseLayoutProps = {
     footer: ReactNode,
     children: ReactNode
 }
+
+export type AuthCardProps = {
+    title: string,
+    children: ReactNode
+}
