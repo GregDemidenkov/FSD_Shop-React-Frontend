@@ -1,16 +1,15 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import { Card } from 'antd'
 
 import { ProductInfo } from '../ProductInfo'
 import { ProductTitle } from '../ProductTitle'
-import { AddToCart } from '@features/AddToCart'
 
 
 const { Meta } = Card
 
 
-export const ProductCard: FC = () => {
+export const ProductCard: FC<PropsWithChildren> = ({children}) => {
 
     return (
         <Card
@@ -28,7 +27,7 @@ export const ProductCard: FC = () => {
                 description = {<ProductInfo />}
             />
             <div style = {{marginTop: '20px'}}>
-                <AddToCart />
+                { children }
             </div>
         </Card>
     )
