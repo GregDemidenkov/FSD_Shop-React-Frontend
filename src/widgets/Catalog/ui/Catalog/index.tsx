@@ -2,11 +2,12 @@ import { FC } from 'react'
 
 import { Col, Row } from 'antd'
 
-import { ProductCard } from '@entities/product'
+import { CatalogProps } from '@widgets/Catalog/model/typs'
 import { AddToCart } from '@features/AddToCart'
+import { ProductCard } from '@entities/product'
 
 
-export const Catalog: FC = () => {
+export const Catalog: FC<CatalogProps> = ({products}) => {
 
     return (
         <div>
@@ -16,15 +17,23 @@ export const Catalog: FC = () => {
                 justify='space-between'
             >
                 {
-                    Array(6).fill(0).map((_, index) => (
+                    products.map((product, index) => (
                         <Col
                             key = {index}
                             className = "gutter-row"
                             span={8}
-                            style={{display: 'flex', justifyContent: 'center'}}
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center'
+                            }}
                         >
-                            <ProductCard>
-                                <AddToCart />
+                            <ProductCard 
+                                product = {product}
+                            >
+                                <AddToCart 
+                                    productId = {product.id}
+                                    count = {product.count}
+                                />
                             </ProductCard>
                         </Col>
                     ))

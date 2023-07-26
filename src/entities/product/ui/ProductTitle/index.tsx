@@ -1,13 +1,15 @@
 import { FC } from 'react'
 
+import { ProductTitleProps } from '@entities/product/model/types'
 
-export const ProductTitle: FC = () => {
+
+export const ProductTitle: FC<ProductTitleProps> = ({name}) => {
 
     return (
         <div 
-            style={{whiteSpace: 'normal'}}
+            style={{height: '60px', whiteSpace: 'normal'}}
         >
-            Лавандово-фиолетовая шпинель в огранке кушон
+            { name }
         </div>
     )
 }

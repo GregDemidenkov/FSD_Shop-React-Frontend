@@ -2,19 +2,20 @@ import createSagaMiddleware from 'redux-saga'
 import { takeEvery } from 'redux-saga/effects'
 import { configureStore  } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
-// import posts, { GET_PRODUCTS, getProductsSaga } from './posts'
+
+import products, { GET_PRODUCTS, getProductsSaga } from '@pages/catalog/model/slice'
 
 
 const sagaMiddleware = createSagaMiddleware()
 
 function* sagas() {
-    // yield takeEvery(GET_PRODUCTS, getProductsSaga)
+    yield takeEvery(GET_PRODUCTS, getProductsSaga)
 }
     
 export const store = configureStore({
     devTools: true,
     reducer: {
-        // posts,
+        products,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),

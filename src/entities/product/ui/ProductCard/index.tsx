@@ -1,15 +1,16 @@
-import { FC, PropsWithChildren } from 'react'
+import { FC } from 'react'
 
 import { Card } from 'antd'
 
 import { ProductInfo } from '../ProductInfo'
 import { ProductTitle } from '../ProductTitle'
+import { ProductCardProps } from '@entities/product/model/types'
 
 
 const { Meta } = Card
 
 
-export const ProductCard: FC<PropsWithChildren> = ({children}) => {
+export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
 
     return (
         <Card
@@ -18,13 +19,17 @@ export const ProductCard: FC<PropsWithChildren> = ({children}) => {
             cover = {
                 <img 
                     alt="example" 
-                    src="https://gemstock.ru/wa-data/public/shop/products/28/41/4128/images/19252/19252.970.jpg" 
+                    src={product.img} 
                 />
             }
         >
             <Meta
-                title = {<ProductTitle />}
-                description = {<ProductInfo />}
+                title = {<ProductTitle name = {product.name}/>}
+                description = {<ProductInfo info = {{
+                    country: product.country,
+                    carats: product.carats,
+                    price: product.price
+                }}/>}
             />
             <div style = {{marginTop: '20px'}}>
                 { children }
