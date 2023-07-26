@@ -1,10 +1,16 @@
-import { FC } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { FC, useEffect } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 
 import routesList from './routes/routesList'
+import config from './routes/config'
 
 
 export const App: FC = () => {
+	const navigate = useNavigate()
+
+	useEffect(() => {
+		navigate(config.catalog)
+	}, [])
 
 	return (
 		<Routes>
