@@ -1,21 +1,30 @@
 import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Button, Form, Input } from 'antd'
 import { LockOutlined, MailOutlined } from '@ant-design/icons'
 
 import config from '@app/routes/config'
-import { LoginInfo } from '@features/LoginForm/model/types'
+import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
+import { login } from '@features/LoginForm/model/loginAction'
+import { LoginDto } from '@features/LoginForm/model/types'
+import { Message } from '@shared/ui/Message'
 
 import styles from './index.module.scss'
 
 
-const onFinish = (values: LoginInfo) => {
-  console.log('Success:', values)
-}
-
-
 export const LoginForm: FC = () => {
+    const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+    const { message, isLoading } = useAppSelector(
+        (state) => state.auth
+    )
+
+    const onFinish = (values: LoginDto) => {
+        dispatch(login(values))
+    }
+
+    if(localStorage.getItem('accessToken') && !isLoading) navigate(config.catalog)
 
     return (
         <Form
@@ -25,6 +34,15 @@ export const LoginForm: FC = () => {
             onFinish={onFinish}
             autoComplete="off"
         >
+            {
+                message.type &&
+                <Message 
+                    type = {message.type}
+                    text = {message.text}
+                />
+            }
+            <p>sir.blacktiger@mail.ru</p>
+            <p>lol123lol</p>
             <Form.Item
                 name="email"
                 rules={[{ required: true, message: 'Please input your Email!' }]}

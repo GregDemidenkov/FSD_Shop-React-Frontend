@@ -1,28 +1,19 @@
-import createSagaMiddleware from 'redux-saga'
-import { takeEvery } from 'redux-saga/effects'
-import { configureStore  } from '@reduxjs/toolkit'
-import { useDispatch } from 'react-redux'
+import { configureStore } from "@reduxjs/toolkit"
+import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux'
 
-import products, { GET_PRODUCTS, getProductsSaga } from '@pages/catalog/model/slice'
+import productsReducer from '@pages/catalog/model/slice'
+import authReducer from '@entities/auth/model/slice'
 
-
-const sagaMiddleware = createSagaMiddleware()
-
-function* sagas() {
-    yield takeEvery(GET_PRODUCTS, getProductsSaga)
-}
-    
 export const store = configureStore({
-    devTools: true,
     reducer: {
-        products,
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
+        products: productsReducer,
+        auth: authReducer
+    }
 })
 
-sagaMiddleware.run(sagas)
-
-
-export const useStoreDispatch = () => useDispatch<typeof store.dispatch>()
 export type RootState = ReturnType<typeof store.getState>
+
+type AppDispatch = typeof store.dispatch
+
+export const useAppDispatch = () => useDispatch<AppDispatch>()
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector

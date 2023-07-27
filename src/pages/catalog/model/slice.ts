@@ -1,38 +1,39 @@
-import { createAction, createSlice } from '@reduxjs/toolkit'
-import { put } from 'redux-saga/effects'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import ProductService from '../api/ProductService'
-import { Product } from '@entities/product/model/types'
 
+import { Product } from "@entities/product/model/types";
+import { getProducts } from "./asyncAction";
 
 interface ProductsState {
-  list: Array<Product>
+    products: Product[],
+    isLoading: boolean
 }
 
 const initialState: ProductsState = {
-    list: []
+    products: [],
+    isLoading: false
 }
 
-export function* getProductsSaga(): any {
-    const payload = yield ProductService.getProducts()
-
-    yield put(setProducts(payload.data))
-}
-
-
-const productsSlice = createSlice({
-    name: 'products',
+const productSlice = createSlice({
+    name: "products",
     initialState,
     reducers: {
-        setProducts: (state, action) => {
-            state.list = action.payload
-        },
-    }
+
+    },
+    extraReducers: (builder) => {
+        builder.addCase(getProducts.pending, (state) => {
+            state.isLoading = true;
+        });
+        builder.addCase(getProducts.fulfilled, (state, action: PayloadAction<Product[]>) => {
+            state.isLoading = false;
+            state.products = action.payload
+        });
+        builder.addCase(getProducts.rejected, (state) => {
+            state.isLoading = false;
+        });
+    },
 })
 
+export const { } = productSlice.actions;
 
-export const GET_PRODUCTS = 'products/getProducts'
-export const getProducts = createAction(GET_PRODUCTS)
-
-export const { setProducts } = productsSlice.actions
-export default productsSlice.reducer
+export default productSlice.reducer;

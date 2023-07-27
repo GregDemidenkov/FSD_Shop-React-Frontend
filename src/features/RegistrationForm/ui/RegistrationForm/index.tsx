@@ -1,21 +1,30 @@
 import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Button, Form, Input } from 'antd'
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons'
 
 import config from '@app/routes/config'
-import { RegistartionInfo } from '@features/RegistrationForm/model/types'
+import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
+import { registration } from '@features/RegistrationForm/model/registrationAction'
+import { RegistartionDto } from '@features/RegistrationForm/model/types'
+import { Message } from '@shared/ui/Message'
 
 import styles from './index.module.scss'
 
 
-const onFinish = (values: RegistartionInfo) => {
-  console.log('Success:', values)
-}
-
-
 export const RegistrationForm: FC = () => {
+    const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+    const { message, isLoading } = useAppSelector(
+        (state) => state.auth
+    )
+
+    const onFinish = (values: RegistartionDto) => {
+        dispatch(registration(values))
+    }
+
+    if(message.type === 'success' && !isLoading) navigate(config.login)
 
     return (
         <Form
@@ -25,6 +34,13 @@ export const RegistrationForm: FC = () => {
             onFinish={onFinish}
             autoComplete="off"
         >
+            {
+                message.type &&
+                <Message 
+                    type = {message.type}
+                    text = {message.text}
+                />
+            }
             <Form.Item
                 name="name"
                 rules={[{ required: true, message: 'Please input your Name!' }]}
