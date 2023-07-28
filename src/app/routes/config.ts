@@ -1,7 +1,7 @@
 export default {
     catalog: "/catalog",
     cart: "/cart",
-    login: "/login",
-    registration: "/registration",
+    login: "/auth/login",
+    registration: "/auth/registration",
     missing: '*'
 }

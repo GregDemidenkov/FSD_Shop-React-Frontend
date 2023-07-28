@@ -10,7 +10,7 @@ export const getProducts = createAsyncThunk<Product[], string>(
         try {
             const response: any = await ProductService.getProducts(sort)
 
-            return response.data
+            return response.data as Product[]
         } catch (error: any) {
             return thunkAPI.rejectWithValue("Error");
         }

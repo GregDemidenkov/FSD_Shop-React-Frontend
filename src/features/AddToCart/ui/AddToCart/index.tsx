@@ -1,27 +1,51 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
-import { Button, InputNumber, Space } from 'antd'
+import { Button, InputNumber, Space, message } from 'antd'
 
+import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
+import { addProductOrder } from '@features/AddToCart/model/addToCartAction'
 import { AddToCartProps } from '@features/AddToCart/model/types'
 
 import styles from './index.module.scss'
 
 
-const onChange = (value: number | null) => {
-    console.log('changed', value)
-}
-
-
 export const AddToCart: FC<AddToCartProps> = ({productId, count}) => {
-    
+    const dispatch = useAppDispatch()
+    const { user } = useAppSelector(
+        (state) => state.auth
+    )
+    const [currCount, setCurrCount] = useState<number>(1)
+    const [messageApi, contextHolder] = message.useMessage()
+
+    const onChange = (value: number | null) => {
+        setCurrCount(value != null ? value : 1)
+    }
+
+    const info = () => {
+        messageApi.info(`Товар в количестве ${currCount} шт. добавлен в корзину!`)
+    }
+
+    const addToCartHandler = () => {
+        dispatch(addProductOrder({
+            userId: user.id,
+            productOrder: {
+                id: productId,
+                count: currCount
+            }
+        }))
+        info()
+    }
+
     return (
         <Space
             className={styles.root}
             size={24}
         >
+            {contextHolder}
             <p>Осталось {count} шт</p>
             <Button 
                 type='primary'
+                onClick = {addToCartHandler}
             >
                 В корзину
             </Button>

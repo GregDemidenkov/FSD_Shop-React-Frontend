@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 
 
 export type Product = {
-    id: string,
+    _id: string,
     name: string,
     img: string,
     country: string

@@ -34,7 +34,7 @@ export const Catalog: FC<CatalogProps> = ({products}) => {
                                 product = {product}
                             >
                                 <AddToCart 
-                                    productId = {product.id}
+                                    productId = {product._id}
                                     count = {product.count}
                                 />
                             </ProductCard>
