@@ -4,11 +4,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 import ProductService from "../api/ProductService"
 
 
-export const getProducts = createAsyncThunk<Product[]>(
+export const getProducts = createAsyncThunk<Product[], string>(
     "products/getProducts", 
-    async (_, thunkAPI) => {
+    async (sort, thunkAPI) => {
         try {
-            const response: any = await ProductService.getProducts()
+            const response: any = await ProductService.getProducts(sort)
 
             return response.data
         } catch (error: any) {

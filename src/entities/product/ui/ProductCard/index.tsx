@@ -21,7 +21,7 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
     
     return (
         <Card
-            style = {{ width: 400, boxShadow: '1px 4px 10px #BCB8B5' }}
+            style = {{ width: 400, boxShadow: '1px 4px 10px #BCB8B5', margin: 'auto' }}
             bordered = {true}
             cover = {
                 <img 

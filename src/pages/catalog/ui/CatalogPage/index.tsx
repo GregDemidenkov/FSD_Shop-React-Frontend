@@ -10,13 +10,13 @@ import { BaseLayout } from '@shared/ui/BaseLayout'
 
 export const CatalogPage: FC = () => {
     const dispatch = useAppDispatch()
-    const products = useAppSelector(
-        (state) => state.products.products
+    const { products, sort } = useAppSelector(
+        (state) => state.products
     )
 
     useEffect(() => {
-        dispatch(getProducts())
-    }, [dispatch])
+        dispatch(getProducts(sort))
+    }, [sort])
 
     return (
         <BaseLayout 

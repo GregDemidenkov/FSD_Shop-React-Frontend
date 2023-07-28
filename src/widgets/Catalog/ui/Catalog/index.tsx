@@ -2,8 +2,9 @@ import { FC } from 'react'
 
 import { Col, Row } from 'antd'
 
-import { CatalogProps } from '@widgets/Catalog/model/typs'
+import { CatalogProps } from '../../model/types'
 import { AddToCart } from '@features/AddToCart'
+import { SortProducts } from '@features/SortProducts'
 import { ProductCard } from '@entities/product'
 
 
@@ -11,10 +12,12 @@ export const Catalog: FC<CatalogProps> = ({products}) => {
 
     return (
         <div>
-            {/* <SortProducts /> */}
+            <Row justify='end' style={{width: '100%', marginBottom: '40px'}}>
+                <SortProducts />
+            </Row>
             <Row 
-                gutter = {[0, 40]} 
-                justify='space-between'
+                gutter = {[0, 40]}
+                justify='start' 
             >
                 {
                     products.map((product, index) => (
@@ -24,7 +27,7 @@ export const Catalog: FC<CatalogProps> = ({products}) => {
                             span={8}
                             style={{
                                 display: 'flex',
-                                justifyContent: 'center'
+                                justifyContent: 'start'
                             }}
                         >
                             <ProductCard 
