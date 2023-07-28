@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 
-import { getProducts } from '../model/asyncAction'
+import { getProducts } from '../../model/asyncAction'
 import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
 import { LayoutHeader } from '@widgets/LayoutHeader'
 import { Catalog } from '@widgets/Catalog'

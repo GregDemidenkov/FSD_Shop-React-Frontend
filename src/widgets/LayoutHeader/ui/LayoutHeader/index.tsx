@@ -4,8 +4,8 @@ import { Layout } from 'antd'
 
 import { Logo } from '../Logo'
 import { Container } from '@shared/ui/Container'
-import { HeaderMenu } from '@features/HeaderMenu/ui/HeaderMenu'
-import { AuthMenu } from '@features/AuthMenu/ui/AuthMenu'
+import { HeaderMenu } from '@features/HeaderMenu'
+import { AuthMenu } from '@features/AuthMenu'
 
 import styles from './index.module.scss'
 

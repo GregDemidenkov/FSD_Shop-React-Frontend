@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import { LayoutHeader } from '@widgets/LayoutHeader'
-import { LoginForm } from '@features/LoginForm/ui/LoginForm'
+import { LoginForm } from '@features/LoginForm'
 import { LayoutFooter } from '@shared/ui/LayoutFooter'
 import { BaseLayout } from '@shared/ui/BaseLayout'
 import { AuthCard } from '@shared/ui/AuthCard'

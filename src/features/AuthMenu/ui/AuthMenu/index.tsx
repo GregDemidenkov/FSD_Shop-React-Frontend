@@ -3,6 +3,7 @@ import { NavLink  } from 'react-router-dom'
 
 import { Space } from 'antd'
 
+import { Welcome } from '../Welcome'
 import config from '@app/routes/config'
 import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
 import { logout } from '@entities/auth/model/slice'
@@ -12,7 +13,7 @@ import style from './index.module.scss'
 
 export const AuthMenu: FC = () => {
     const dispatch = useAppDispatch()
-    const { isAuth } = useAppSelector(
+    const { isAuth, user } = useAppSelector(
         (state) => state.auth
     )
 
@@ -39,15 +40,18 @@ export const AuthMenu: FC = () => {
                     </NavLink >
                 </>
                 :
-                <NavLink
-                    className = {
-                        ({ isActive }) => isActive ? style.active : style.link
-                    }
-                    onClick={() => dispatch(logout())}
-                    to = {config.login}
-                    >
-                        Выход
-                </NavLink >
+                <>
+                    <Welcome name = {user.name} />
+                    <NavLink
+                        className = {
+                            ({ isActive }) => isActive ? style.active : style.link
+                        }
+                        onClick={() => dispatch(logout())}
+                        to = {config.login}
+                        >
+                            Выход
+                    </NavLink >
+                </>
             }
         </Space>
     )
