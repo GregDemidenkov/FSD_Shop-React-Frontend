@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-import { Message, User } from "@entities/auth/model/types"
+import { User } from "@entities/auth/model/types"
 
 
 export type BaseLayoutProps = {
@@ -19,4 +19,8 @@ export type AuthResponse = {
     user: User
 }
 
-export interface MessageProps extends Message {}
+export interface MessageProps {
+    type: 'info' | 'success' | 'error' | null,
+    text: string | ReactNode
+    
+}
