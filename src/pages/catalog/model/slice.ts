@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 import { Product } from "@entities/product/model/types"
-import { getProducts } from "./asyncAction"
+import { getProducts } from "./getProductsAction"
 
 
 interface ProductsState {

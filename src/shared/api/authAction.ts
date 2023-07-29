@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
 import AuthService from "@entities/auth/api/AuthService"
-import { AuthResponse } from "@entities/auth/model/types"
+import { AuthResponse } from "@shared/model/types"
+
 
 
 export const auth = createAsyncThunk<AuthResponse>(

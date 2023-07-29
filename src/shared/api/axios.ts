@@ -9,6 +9,9 @@ export const axiosApi = axios.create({
 
 const protectedAxios = axios.create({
     baseURL: import.meta.env.VITE_PORT,
+    headers: {
+        Authorization : `Bearer ${localStorage.getItem('accessToken')}`
+    }
 })
 
 protectedAxios.interceptors.response.use(
@@ -22,7 +25,7 @@ protectedAxios.interceptors.response.use(
             const result = await AuthService.refreshToken()
             const token = result.data.accessToken
             localStorage.setItem('accessToken', token)
-
+            
             originalRequest.headers.Authorization = `Bearer ${localStorage.getItem('accessToken')}`
             return axios(originalRequest)
         }
