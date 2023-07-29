@@ -1,9 +1,9 @@
-import { LoginPage } from "../../pages/auth/login/ui/LoginPage"
-import { RegistrationPage } from "../../pages/auth/registration/ui/RegistrationPage"
-import { CartPage } from "../../pages/cart/ui/CartPage"
-import { CatalogPage } from "../../pages/catalog/ui/CatalogPage"
+import { LoginPage } from "@pages/login"
+import { RegistrationPage } from "@pages/registration"
+import { CartPage } from "@pages/cart"
+import { CatalogPage } from "@pages/catalog"
 
-import config from "../../shared/routes/config"
+import config from "@shared/routes/config"
 
 
 export default [
