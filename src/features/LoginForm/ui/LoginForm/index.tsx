@@ -5,10 +5,10 @@ import { Button, Form, Input } from 'antd'
 import { LockOutlined, MailOutlined } from '@ant-design/icons'
 
 import config from '@app/routes/config'
-import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
 import { login } from '@features/LoginForm/model/loginAction'
 import { LoginDto } from '@features/LoginForm/model/types'
 import { Message } from '@shared/ui/Message'
+import { useAppDispatch, useAppSelector } from '@shared/model/types'
 
 import styles from './index.module.scss'
 

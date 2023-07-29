@@ -5,8 +5,8 @@ import { Space } from 'antd'
 
 import { Welcome } from '../Welcome'
 import config from '@app/routes/config'
-import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
 import { logout } from '@entities/auth/model/slice'
+import { useAppDispatch, useAppSelector } from '@shared/model/types'
 
 import style from './index.module.scss'
 

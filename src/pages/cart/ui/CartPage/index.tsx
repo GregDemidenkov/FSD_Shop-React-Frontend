@@ -5,12 +5,12 @@ import { Row, Space } from 'antd'
 import { EmptyCart } from '../EmptyCart'
 import { EmptyCartNavigate } from '../EmptyCartNavigate'
 import { getUserOrder } from '../../model/getUserOrderAction'
-import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
 import { CartTable } from '@widgets/CartTable'
 import { LayoutHeader } from '@widgets/LayoutHeader'
 import { ClearCart } from '@features/ClearCart'
 import { LayoutFooter } from '@shared/ui/LayoutFooter'
 import { BaseLayout } from '@shared/ui/BaseLayout'
+import { useAppDispatch, useAppSelector } from '@shared/model/types'
 
 import styles from './index.module.scss'
 

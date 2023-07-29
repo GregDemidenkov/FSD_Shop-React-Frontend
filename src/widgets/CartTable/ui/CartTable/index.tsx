@@ -8,7 +8,7 @@ import { ChangeCountProductOrder } from '@features/ChangeCountProductOrder'
 import { DeleteFromCart } from '@features/DeleteFromCart'
 import { ProductRow } from '@entities/product'
 import priceFormatter from '@shared/lib/priceFormatter'
-import { useAppSelector } from '@app/store/rootStore'
+import { useAppSelector } from '@shared/model/types'
 
 
 export const CartTable: FC<CartTableProps> = ({productOrders}) => {

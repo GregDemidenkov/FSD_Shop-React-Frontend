@@ -2,8 +2,8 @@ import { FC } from 'react'
 
 import { Select } from 'antd'
 
-import { useAppDispatch } from '@app/store/rootStore'
 import { setSort } from '@pages/catalog/model/slice'
+import { useAppDispatch } from '@shared/model/types'
 
 
 export const SortProducts: FC = () => {

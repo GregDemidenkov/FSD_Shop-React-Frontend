@@ -3,9 +3,9 @@ import { FC, useEffect } from 'react'
 import { Layout } from 'antd'
 
 import { Container } from '../Container'
-import { useAppDispatch } from '@app/store/rootStore'
 import { auth } from '@shared/api/authAction'
 import { BaseLayoutProps } from '@shared/model/types'
+import { useAppDispatch } from '@shared/model/types'
 
 import styles from './index.module.scss'
 

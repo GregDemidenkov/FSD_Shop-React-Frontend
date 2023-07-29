@@ -4,8 +4,8 @@ import { Button } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 
 import { DeleteFromCartProps } from '@features/DeleteFromCart/model/types'
-import { useAppDispatch } from '@app/store/rootStore'
 import { deleteFromCart } from '@features/DeleteFromCart/model/deleteFromCartAction'
+import { useAppDispatch } from '@shared/model/types'
 
 
 export const DeleteFromCart: FC<DeleteFromCartProps> = ({productOrderId, userId}) => {

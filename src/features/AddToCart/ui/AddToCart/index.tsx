@@ -2,9 +2,9 @@ import { FC, useState } from 'react'
 
 import { Button, InputNumber, Space, message } from 'antd'
 
-import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
 import { addProductOrder } from '@features/AddToCart/model/addToCartAction'
 import { AddToCartProps } from '@features/AddToCart/model/types'
+import { useAppDispatch, useAppSelector } from '@shared/model/types'
 
 import styles from './index.module.scss'
 

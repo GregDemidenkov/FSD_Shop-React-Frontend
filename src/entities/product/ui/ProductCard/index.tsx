@@ -6,9 +6,9 @@ import { Card } from 'antd'
 import { ProductInfo } from '../ProductInfo'
 import { ProductTitle } from '../ProductTitle'
 import config from '@app/routes/config'
-import { useAppSelector } from '@app/store/rootStore'
 import { ProductCardProps } from '@entities/product/model/types'
 import { Message } from '@shared/ui/Message'
+import { useAppSelector } from '@shared/model/types'
 
 
 const { Meta } = Card

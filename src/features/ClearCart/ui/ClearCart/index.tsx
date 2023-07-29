@@ -4,7 +4,7 @@ import { Button } from 'antd'
 
 import { ClearCartProps } from '../../model/types'
 import { clearCart } from '../../model/clearCartAction'
-import { useAppDispatch } from '@app/store/rootStore'
+import { useAppDispatch } from '@shared/model/types'
 
 
 export const ClearCart: FC<ClearCartProps> = ({userOrderId}) => {
