@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 
 import routesList from './routes/routesList'
-import config from './routes/config'
+import config from '../shared/routes/config'
 
 
 export const App: FC = () => {

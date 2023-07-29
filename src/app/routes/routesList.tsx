@@ -3,7 +3,7 @@ import { RegistrationPage } from "../../pages/auth/registration/ui/RegistrationP
 import { CartPage } from "../../pages/cart/ui/CartPage"
 import { CatalogPage } from "../../pages/catalog/ui/CatalogPage"
 
-import config from "./config"
+import config from "../../shared/routes/config"
 
 
 export default [

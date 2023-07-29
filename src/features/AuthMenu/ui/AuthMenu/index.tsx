@@ -4,9 +4,9 @@ import { NavLink  } from 'react-router-dom'
 import { Space } from 'antd'
 
 import { Welcome } from '../Welcome'
-import config from '@app/routes/config'
 import { logout } from '@entities/auth/model/slice'
 import { useAppDispatch, useAppSelector } from '@shared/model/types'
+import config from '@shared/routes/config'
 
 import style from './index.module.scss'
 

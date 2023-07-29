@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 import { Menu, MenuProps } from 'antd'
 
-import config from '@app/routes/config'
+import config from '@shared/routes/config'
 
 
 const items: MenuProps['items'] = [

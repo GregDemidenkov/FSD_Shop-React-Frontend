@@ -4,11 +4,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Button, Form, Input } from 'antd'
 import { LockOutlined, MailOutlined } from '@ant-design/icons'
 
-import config from '@app/routes/config'
 import { login } from '@features/LoginForm/model/loginAction'
 import { LoginDto } from '@features/LoginForm/model/types'
 import { Message } from '@shared/ui/Message'
 import { useAppDispatch, useAppSelector } from '@shared/model/types'
+import config from '@shared/routes/config'
 
 import styles from './index.module.scss'
 
