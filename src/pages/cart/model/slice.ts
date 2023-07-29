@@ -5,6 +5,7 @@ import { FullUserOrder, ProductOrder } from "./types"
 import { addProductOrder } from "@features/AddToCart/model/addToCartAction"
 import { deleteFromCart } from "@features/DeleteFromCart/model/deleteFromCartAction"
 import { changeCountProductOrder } from "@features/ChangeCountProductOrder/model/changeCountProductOrderAction"
+import { clearCart } from "@features/ClearCart/model/clearCartAction"
 
 
 interface CartState {
@@ -23,7 +24,10 @@ const CartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-
+        clearState(state) {
+            state.productOrders = []
+            state.userOrderId = ""
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(addProductOrder.pending, (state) => {
@@ -67,9 +71,19 @@ const CartSlice = createSlice({
         builder.addCase(changeCountProductOrder.rejected, (state) => {
             state.isLoading = false
         })
+
+        builder.addCase(clearCart.pending, (state) => {
+            state.isLoading = true
+        })
+        builder.addCase(clearCart.fulfilled, (state) => {
+            state.isLoading = false
+        })
+        builder.addCase(clearCart.rejected, (state) => {
+            state.isLoading = false
+        })
     },
 })
 
-export const { } = CartSlice.actions
+export const { clearState } = CartSlice.actions
 
 export default CartSlice.reducer

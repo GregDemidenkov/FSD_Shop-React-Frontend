@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
-import ProductOrderService from "@pages/cart/api/ProductOrderService"
-import { getUserOrder } from "@pages/cart/model/getUserOrderAction"
 import { DeleteFromCartDto } from "./types"
+import { getUserOrder } from "@pages/cart/model/getUserOrderAction"
+import ProductOrderService from "@shared/api/ProductOrderService"
 
 
 export const deleteFromCart = createAsyncThunk(
-    "cart/DeleteFromCartDto", 
+    "cart/deleteFromCart", 
     async (dto: DeleteFromCartDto, thunkAPI) => {
         try {
             const response: any = await ProductOrderService.deleteFromCart(dto.productOrderId)

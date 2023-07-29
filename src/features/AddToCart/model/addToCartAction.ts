@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
 import { AddProductOrderDto, UserOrder } from "./types"
-import ProductOrderService from "@pages/cart/api/ProductOrderService"
+import ProductOrderService from "@shared/api/ProductOrderService"
 
 
 export const addProductOrder = createAsyncThunk<UserOrder, AddProductOrderDto>(

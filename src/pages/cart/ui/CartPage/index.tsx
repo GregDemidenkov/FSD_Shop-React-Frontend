@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 
-import { Space } from 'antd'
+import { Row, Space } from 'antd'
 
 import { EmptyCart } from '../EmptyCart'
 import { EmptyCartNavigate } from '../EmptyCartNavigate'
@@ -8,6 +8,7 @@ import { getUserOrder } from '../../model/getUserOrderAction'
 import { useAppDispatch, useAppSelector } from '@app/store/rootStore'
 import { CartTable } from '@widgets/CartTable'
 import { LayoutHeader } from '@widgets/LayoutHeader'
+import { ClearCart } from '@features/ClearCart'
 import { LayoutFooter } from '@shared/ui/LayoutFooter'
 import { BaseLayout } from '@shared/ui/BaseLayout'
 
@@ -19,7 +20,7 @@ export const CartPage: FC = () => {
     const { user, isAuth } = useAppSelector(
         (state) => state.auth
     )
-    const { productOrders } = useAppSelector(
+    const { productOrders, userOrderId } = useAppSelector(
         (state) => state.cart
     )
 
@@ -35,13 +36,21 @@ export const CartPage: FC = () => {
             {
                 productOrders.length > 0
                 ?
-                    <CartTable productOrders = {productOrders}/>
+                    <>
+                        <Row 
+                            justify='end'
+                            className = {styles.clearCartWrapper}
+                        >
+                            <ClearCart userOrderId = {userOrderId}/>
+                        </Row>
+                        <CartTable productOrders = {productOrders}/>
+                    </>
                 :
                 <Space 
                     direction='vertical' 
                     align='center'
                     size={32}
-                    className={styles.root}
+                    className={styles.empty}
                 >
                     <EmptyCart />
                     <EmptyCartNavigate isAuth = {isAuth}/>
