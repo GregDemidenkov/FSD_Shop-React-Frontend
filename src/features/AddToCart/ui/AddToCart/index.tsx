@@ -5,11 +5,21 @@ import { Button, InputNumber, Space, message } from 'antd'
 import { addProductOrder } from '@features/AddToCart/model/addToCartAction'
 import { AddToCartProps } from '@features/AddToCart/model/types'
 import { useAppDispatch, useAppSelector } from '@shared/model/types'
+import { Message } from '@shared/ui/Message'
 
 import styles from './index.module.scss'
 
 
 export const AddToCart: FC<AddToCartProps> = ({productId, count}) => {
+    if(!count) {
+        return (
+            <Message 
+                text = {'Товара нет в наличии'} 
+                type = {'error'}
+            />
+        )
+    }
+
     const dispatch = useAppDispatch()
     const { user } = useAppSelector(
         (state) => state.auth

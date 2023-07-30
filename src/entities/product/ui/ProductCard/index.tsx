@@ -38,7 +38,7 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
                     price: product.price
                 }}/>}
             />
-            <div style = {{marginTop: '20px'}}>
+            <div style = {{marginTop: '20px', height: '40px'}}>
                 {
                     isAuth
                     ?

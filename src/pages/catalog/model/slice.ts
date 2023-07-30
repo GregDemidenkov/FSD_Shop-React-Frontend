@@ -1,18 +1,21 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-import { Product } from "@entities/product/model/types"
 import { getProducts } from "./getProductsAction"
+import { getActiveProducts } from "@entities/product/model/getActiveProductsAction"
+import { Product } from "@entities/product/model/types"
 
 
 interface ProductsState {
     products: Product[],
     sort: 'down' | 'up' | "default"
+    activeProducts: string[],
     isLoading: boolean
 }
 
 const initialState: ProductsState = {
     products: [],
     sort: "default",
+    activeProducts: [],
     isLoading: false
 }
 
@@ -22,6 +25,9 @@ const productSlice = createSlice({
     reducers: {
         setSort(state, action) {
             state.sort = action.payload
+        },
+        clearActiveProducts(state) {
+            state.activeProducts = []
         }
     },
     extraReducers: (builder) => {
@@ -35,9 +41,20 @@ const productSlice = createSlice({
         builder.addCase(getProducts.rejected, (state) => {
             state.isLoading = false
         })
+
+        builder.addCase(getActiveProducts.pending, (state) => {
+            state.isLoading = true
+        })
+        builder.addCase(getActiveProducts.fulfilled, (state, action: PayloadAction<string[]>) => {
+            state.isLoading = false
+            state.activeProducts = action.payload
+        })
+        builder.addCase(getActiveProducts.rejected, (state) => {
+            state.isLoading = false
+        })
     },
 })
 
-export const { setSort } = productSlice.actions
+export const { setSort, clearActiveProducts } = productSlice.actions
 
 export default productSlice.reducer

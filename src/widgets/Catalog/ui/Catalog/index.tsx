@@ -1,14 +1,28 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 
 import { Col, Row } from 'antd'
 
 import { CatalogProps } from '../../model/types'
+import { clearActiveProducts } from '@pages/catalog/model/slice'
 import { AddToCart } from '@features/AddToCart'
 import { SortProducts } from '@features/SortProducts'
 import { ProductCard } from '@entities/product'
+import { getActiveProducts } from '@entities/product/model/getActiveProductsAction'
+import { useAppDispatch, useAppSelector } from '@shared/model/types'
+import { Message } from '@shared/ui/Message'
 
 
 export const Catalog: FC<CatalogProps> = ({products}) => {
+    const dispatch = useAppDispatch()
+    const { isAuth, user } = useAppSelector(state => state.auth)
+    const { activeProducts } = useAppSelector(state => state.products)
+
+    useEffect(() => {
+        dispatch(clearActiveProducts())
+        if(isAuth) {
+            dispatch(getActiveProducts(user.id))
+        }
+    }, [isAuth])
 
     return (
         <div>
@@ -33,10 +47,16 @@ export const Catalog: FC<CatalogProps> = ({products}) => {
                             <ProductCard 
                                 product = {product}
                             >
-                                <AddToCart 
-                                    productId = {product._id}
-                                    count = {product.count}
-                                />
+                                {
+                                    !activeProducts.includes(product._id)
+                                    ?
+                                    <AddToCart 
+                                        productId = {product._id}
+                                        count = {product.count}
+                                    />
+                                    :
+                                    <Message text = {'Товар добавлен в корзину'} type = {'info'}/>
+                                }
                             </ProductCard>
                         </Col>
                     ))
