@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { Button, Col, Row } from 'antd'
+import { Button, Col, Row, notification } from 'antd'
 
 import { CheckoutProps } from '../../model/types'
 import { checkout } from '../../model/checkoutAction'
@@ -12,6 +12,27 @@ import styles from './index.module.scss'
 
 export const Checkout: FC<CheckoutProps> = ({check, userOrderId}) => {
     const dispatch = useAppDispatch()
+
+    const openNotification = (access: boolean | null) => {
+        notification.open({
+            message: `Заказ № ${userOrderId}`,
+            description: 
+                access ? 
+                'Заказ успешно оформлен, следите за его статусом' 
+                : 'Недостаточно товара на скаладе',
+            duration: 0
+        })
+    }
+
+    const checkoutHandler = async () => {
+        const result = await dispatch(checkout(userOrderId))
+
+        if(result.meta.requestStatus === 'rejected') {
+            openNotification(false)
+        } else {
+            openNotification(true)
+        }
+    }
 
     return (
         <Row 
@@ -26,7 +47,7 @@ export const Checkout: FC<CheckoutProps> = ({check, userOrderId}) => {
                 <Button 
                     type = 'primary' 
                     size = 'large'
-                    onClick = {() => dispatch(checkout(userOrderId))}
+                    onClick = {checkoutHandler}
                 >
                     Оформить заказ
                 </Button>
