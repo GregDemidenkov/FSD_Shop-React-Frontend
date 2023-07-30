@@ -13,6 +13,10 @@ class UserOrderService {
     clearCart(userOrderId: string) {
         return protectedAxios.delete(`${this.userOrderUrl}/${userOrderId}`)
     }
+
+    checkout(userOrderId: string) {
+        return protectedAxios.patch(`${this.userOrderUrl}/${userOrderId}`)
+    }
 }
 
 

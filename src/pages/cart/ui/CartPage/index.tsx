@@ -8,6 +8,7 @@ import { getUserOrder } from '../../model/getUserOrderAction'
 import { CartTable } from '@widgets/CartTable'
 import { LayoutHeader } from '@widgets/LayoutHeader'
 import { ClearCart } from '@features/ClearCart'
+import { Checkout } from '@features/Checkout'
 import { LayoutFooter } from '@shared/ui/LayoutFooter'
 import { BaseLayout } from '@shared/ui/BaseLayout'
 import { useAppDispatch, useAppSelector } from '@shared/model/types'
@@ -20,7 +21,7 @@ export const CartPage: FC = () => {
     const { user, isAuth } = useAppSelector(
         (state) => state.auth
     )
-    const { productOrders, userOrderId } = useAppSelector(
+    const { productOrders, userOrderId, check } = useAppSelector(
         (state) => state.cart
     )
 
@@ -44,6 +45,7 @@ export const CartPage: FC = () => {
                             <ClearCart userOrderId = {userOrderId}/>
                         </Row>
                         <CartTable productOrders = {productOrders}/>
+                        <Checkout check = {check} userOrderId = {userOrderId}/>
                     </>
                 :
                 <Space 
