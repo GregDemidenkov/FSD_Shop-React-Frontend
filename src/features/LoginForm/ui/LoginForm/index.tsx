@@ -40,8 +40,6 @@ export const LoginForm: FC = () => {
                     text = {message.text}
                 />
             }
-            <p>sir.blacktiger@mail.ru</p>
-            <p>lol123lol</p>
             <Form.Item
                 name="email"
                 rules={[{ required: true, message: 'Please input your Email!' }]}
