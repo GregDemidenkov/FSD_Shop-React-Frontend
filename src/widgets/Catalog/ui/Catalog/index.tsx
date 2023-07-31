@@ -2,12 +2,10 @@ import { FC, useEffect } from 'react'
 
 import { Col, Row } from 'antd'
 
-import { CatalogProps } from '../../model/types'
-import { clearActiveProducts } from '@pages/catalog/model/slice'
+import { CatalogProps } from '@widgets/Catalog'
 import { AddToCart } from '@features/AddToCart'
 import { SortProducts } from '@features/SortProducts'
-import { ProductCard } from '@entities/product'
-import { getActiveProducts } from '@entities/product/model/getActiveProductsAction'
+import { ProductCard, clearActiveProducts, getActiveProducts } from '@entities/product'
 import { useAppDispatch, useAppSelector } from '@shared/model/types'
 import { Message } from '@shared/ui/Message'
 

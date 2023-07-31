@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Space } from 'antd'
 
-import { EmptyCartNavigateProps } from '@pages/cart/model/types'
+import { EmptyCartNavigateProps } from '@pages/cart'
 import config from '@shared/routes/config'
 
 

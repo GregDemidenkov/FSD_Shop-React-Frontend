@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { Table } from 'antd'
 import Column from 'antd/es/table/Column'
 
-import { CartTableProps, TableData } from '../../model/types'
+import { CartTableProps, TableData } from '@widgets/CartTable'
 import { ChangeCountProductOrder } from '@features/ChangeCountProductOrder'
 import { DeleteFromCart } from '@features/DeleteFromCart'
 import { ProductRow } from '@entities/product'

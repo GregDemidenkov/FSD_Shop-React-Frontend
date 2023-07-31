@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit"
 
-import productsReducer from '@pages/catalog/model/slice'
-import cartReducer from '@pages/cart/model/slice'
+import productsReducer from '@entities/product/model/slice'
+import cartReducer from '@entities/cart/model/slice'
 import authReducer from '@entities/auth/model/slice'
 
 

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
 import UserOrderService from "../api/UserOrderService";
-import { FullUserOrder } from "./types";
+import { FullUserOrder } from "@entities/cart/model/types";
 
 
 export const getUserOrder = createAsyncThunk<FullUserOrder, string>(

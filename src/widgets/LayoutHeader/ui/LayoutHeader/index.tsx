@@ -2,10 +2,11 @@ import { FC } from 'react'
 
 import { Layout } from 'antd'
 
-import { Logo } from '../Logo'
-import { Container } from '@shared/ui/Container'
+import { Logo } from '@widgets/LayoutHeader'
 import { HeaderMenu } from '@features/HeaderMenu'
 import { AuthMenu } from '@features/AuthMenu'
+import { Container } from '@shared/ui/Container'
+
 
 import styles from './index.module.scss'
 

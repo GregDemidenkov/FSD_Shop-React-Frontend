@@ -3,8 +3,8 @@ import { NavLink  } from 'react-router-dom'
 
 import { Space } from 'antd'
 
-import { Welcome } from '../Welcome'
-import { logout } from '@entities/auth/model/slice'
+import { Welcome } from '@features/AuthMenu'
+import { logout } from '@entities/auth'
 import { useAppDispatch, useAppSelector } from '@shared/model/types'
 import config from '@shared/routes/config'
 

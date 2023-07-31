@@ -1,5 +1,5 @@
-import { LoginDto } from "@features/LoginForm/model/types"
-import { RegistartionDto } from "@features/RegistrationForm/model/types"
+import { LoginDto } from "@features/LoginForm"
+import { RegistrationDto } from "@features/RegistrationForm"
 import protectedAxios, { axiosApi } from "@shared/api/axios"
 
 
@@ -8,7 +8,7 @@ class AuthService {
     authUrl = '/auth'
 
 
-    registration(dto: RegistartionDto) {
+    registration(dto: RegistrationDto) {
         return axiosApi.post(`${this.authUrl}/registration`, dto)
     }
 

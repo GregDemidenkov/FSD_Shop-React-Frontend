@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 
-import { getProducts } from '../../model/getProductsAction'
+import { getProducts } from '@pages/catalog'
 import { LayoutHeader } from '@widgets/LayoutHeader'
 import { Catalog } from '@widgets/Catalog'
 import { LayoutFooter } from '@shared/ui/LayoutFooter'

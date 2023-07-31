@@ -1,24 +1,8 @@
 import { AxiosResponse } from "axios"
-
-import UserOrderService from "@pages/cart/api/UserOrderService"
-import { FullUserOrder } from "@pages/cart/model/types"
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
-
-// export const getActiveProducts = async (userId: string) => {
-//     try {
-//         const response: AxiosResponse<FullUserOrder> = await UserOrderService.getUserOrder(userId)
-
-//         let activeProducts: string[] = []
-//         response.data.products.forEach((productOrder) => {
-//             activeProducts.push(productOrder.product_id._id)
-//         })
-
-//         return activeProducts
-//     } catch (error: any) {
-//         throw Error(error)
-//     }
-// }
+import { FullUserOrder } from "@entities/cart/model/types"
+import UserOrderService from "@entities/cart/api/UserOrderService"
 
 
 export const getActiveProducts = createAsyncThunk<string[], string>(

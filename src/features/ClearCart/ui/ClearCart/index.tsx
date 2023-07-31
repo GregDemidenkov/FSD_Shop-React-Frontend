@@ -2,8 +2,7 @@ import { FC } from 'react'
 
 import { Button } from 'antd'
 
-import { ClearCartProps } from '../../model/types'
-import { clearCart } from '../../model/clearCartAction'
+import { ClearCartProps, clearCart } from '@features/ClearCart'
 import { useAppDispatch } from '@shared/model/types'
 
 

@@ -2,8 +2,7 @@ import { FC } from 'react'
 
 import { Button, Col, Row, notification } from 'antd'
 
-import { CheckoutProps } from '../../model/types'
-import { checkout } from '../../model/checkoutAction'
+import { CheckoutProps, checkout } from '@features/Checkout'
 import priceFormatter from '@shared/lib/priceFormatter'
 import { useAppDispatch } from '@shared/model/types'
 

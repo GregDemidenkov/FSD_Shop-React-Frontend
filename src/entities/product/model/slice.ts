@@ -1,8 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-import { getProducts } from "./getProductsAction"
-import { getActiveProducts } from "@entities/product/model/getActiveProductsAction"
-import { Product } from "@entities/product/model/types"
+import { getProducts } from "@pages/catalog"
+import { getActiveProducts, Product } from "@entities/product"
 
 
 interface ProductsState {

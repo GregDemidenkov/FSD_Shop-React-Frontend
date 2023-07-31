@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { LogoProps } from '../../model/types'
+import { LogoProps } from '@widgets/LayoutHeader'
 
 import style from './index.module.scss'
 

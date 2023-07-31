@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { Select } from 'antd'
 
-import { setSort } from '@pages/catalog/model/slice'
+import { setSort } from '@entities/product'
 import { useAppDispatch } from '@shared/model/types'
 
 

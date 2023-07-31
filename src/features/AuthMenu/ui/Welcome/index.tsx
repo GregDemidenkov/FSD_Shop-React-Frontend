@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { WelcomeProps } from '@features/AuthMenu/model/types'
+import { WelcomeProps } from '@features/AuthMenu'
 
 import styles from './index.module.scss'
 

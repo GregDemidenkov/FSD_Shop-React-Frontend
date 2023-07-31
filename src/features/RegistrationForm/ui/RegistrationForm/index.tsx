@@ -4,8 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Button, Form, Input } from 'antd'
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons'
 
-import { registration } from '@features/RegistrationForm/model/registrationAction'
-import { RegistartionDto } from '@features/RegistrationForm/model/types'
+import { RegistrationDto, registration } from '@features/RegistrationForm'
 import { Message } from '@shared/ui/Message'
 import { useAppDispatch, useAppSelector } from '@shared/model/types'
 import config from '@shared/routes/config'
@@ -20,7 +19,7 @@ export const RegistrationForm: FC = () => {
         (state) => state.auth
     )
 
-    const onFinish = (values: RegistartionDto) => {
+    const onFinish = (values: RegistrationDto) => {
         dispatch(registration(values))
     }
 

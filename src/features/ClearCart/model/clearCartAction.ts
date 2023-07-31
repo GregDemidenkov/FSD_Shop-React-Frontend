@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
-import UserOrderService from "@pages/cart/api/UserOrderService"
-import { clearState } from "@pages/cart/model/slice"
+import { clearState } from "@entities/cart"
+import UserOrderService from "@entities/cart/api/UserOrderService"
 
 
 export const clearCart = createAsyncThunk(

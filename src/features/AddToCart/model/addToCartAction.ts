@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
 import { AddProductOrderDto, UserOrder } from "./types"
-import { getActiveProducts } from "@entities/product/model/getActiveProductsAction"
+import { getActiveProducts } from "@entities/product"
 import ProductOrderService from "@shared/api/ProductOrderService"
 
 

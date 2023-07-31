@@ -2,8 +2,7 @@ import { FC, useState } from 'react'
 
 import { Button, InputNumber, Space, message } from 'antd'
 
-import { addProductOrder } from '@features/AddToCart/model/addToCartAction'
-import { AddToCartProps } from '@features/AddToCart/model/types'
+import { AddToCartProps, addProductOrder } from '@features/AddToCart'
 import { useAppDispatch, useAppSelector } from '@shared/model/types'
 import { Message } from '@shared/ui/Message'
 

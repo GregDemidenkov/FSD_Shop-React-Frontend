@@ -2,8 +2,7 @@ import { FC } from 'react'
 
 import { InputNumber } from 'antd'
 
-import { ChangeCountProductOrderProps } from '@features/ChangeCountProductOrder/model/types'
-import { changeCountProductOrder } from '@features/ChangeCountProductOrder/model/changeCountProductOrderAction'
+import { ChangeCountProductOrderProps, changeCountProductOrder } from '@features/ChangeCountProductOrder'
 import { useAppDispatch } from '@shared/model/types'
 
 
