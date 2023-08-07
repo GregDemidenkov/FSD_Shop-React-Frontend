@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 
-import { RegistartionDto } from "./types"
+import { RegistrationDto } from "./types"
 import AuthService from "@entities/auth/api/AuthService"
 
 
 export const registration = createAsyncThunk(
     "auth/registration", 
-    async (dto: RegistartionDto , thunkAPI) => {
+    async (dto: RegistrationDto , thunkAPI) => {
         try {
             const response: any = await AuthService.registration(dto)
 

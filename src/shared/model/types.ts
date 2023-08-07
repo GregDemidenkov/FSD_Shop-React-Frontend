@@ -27,5 +27,4 @@ export type AuthResponse = {
 export interface MessageProps {
     type: 'info' | 'success' | 'error' | null,
     text: string | ReactNode
-    
 }
