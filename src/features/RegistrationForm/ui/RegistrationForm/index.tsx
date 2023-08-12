@@ -35,10 +35,12 @@ export const RegistrationForm: FC = () => {
         >
             {
                 message.type &&
-                <Message 
-                    type = {message.type}
-                    text = {message.text}
-                />
+                <div style={{margin: '10px 0'}} >
+                    <Message 
+                        type = {message.type}
+                        text = {message.text}
+                    />
+                </div>
             }
             <Form.Item
                 name="name"

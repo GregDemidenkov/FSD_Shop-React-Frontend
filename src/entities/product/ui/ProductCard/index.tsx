@@ -38,16 +38,18 @@ export const ProductCard: FC<ProductCardProps> = ({product, children}) => {
                     price: product.price
                 }}/>}
             />
-            <div style = {{marginTop: '20px', height: '40px'}}>
+            <div style = {{marginTop: '20px', height: '50px'}}>
                 {
                     isAuth
                     ?
                     children
                     :
-                    <Message 
-                        type='info'
-                        text={<p><Link to = {config.login}>Войдите</Link> в профиль, чтобы добавить товар в корзину</p>}
-                    />
+                    <div style={{margin: '10px 0'}} >
+                        <Message 
+                            type='info'
+                            text={<p><Link to = {config.login}>Войдите</Link> в профиль, чтобы добавить товар в корзину</p>}
+                        />
+                    </div>
                 }
             </div>
         </Card>

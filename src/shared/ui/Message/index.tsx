@@ -9,7 +9,7 @@ export const Message: FC<MessageProps> = ({type, text}) => {
     if (type === null) return;
 
     return (
-        <Alert 
+        <Alert
             message = {text}
             type={type}
         />
