@@ -4,7 +4,7 @@
 
 ### FSD_Shop-Nest-Backend: [https://github.com/GregDemidenkov/FSD_Shop-Nest-Backend](https://github.com/GregDemidenkov/FSD_Shop-Nest-Backend)
 
-### FSD_Shop-Vue-Frontend (in developing...)
+### FSD_Shop-Vue-Frontend [https://github.com/GregDemidenkov/FSD_Shop-Vue-Frontend](https://github.com/GregDemidenkov/FSD_Shop-Vue-Frontend)
 
 <br/>
 
